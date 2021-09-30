@@ -46,6 +46,8 @@ while(True):
     if gamemode == 0:
         in_tickets = int(input("\nMitu piletit soovite igal loosimisel osta? Sisestage täisarv: "))
     else:
+        raha = eelarve
+        money_spent = 0
         in_tickets = int(input(f"\nMitu piletit soovite igal loosimisel osta? Eelarve: {eelarve:,.2f}€\nSisestage täisarv: "))
         
         while in_tickets*TICKET_PRICE > raha:
@@ -99,3 +101,4 @@ while(True):
             raha -= TICKET_PRICE*in_tickets
             money_spent += TICKET_PRICE*in_tickets
             #print(f"Kaotasite {int(TICKET_PRICE*in_tickets):,.2f} € (piletihind). Olete kulutanud {money_spent:,.2f}€ piletite peale ({int(money_spent/TICKET_PRICE)} piletit).")
+
