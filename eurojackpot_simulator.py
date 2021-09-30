@@ -11,6 +11,10 @@ EURO_ODDS = 95344200
 
 # Muutujad
 money_spent = 0
+total_days = 0
+years = 0
+months = 0
+days = 0
 
 # Tervitav sõnum
 print("Tere tulemast Eurojackpoti võitmise simulaatorisse! Mängime kuni võidate jackpoti.\n")
@@ -38,11 +42,19 @@ while(True):
         if roll(in_tickets/EURO_ODDS):
             money_spent += TICKET_PRICE*in_tickets
             jackpot = True
-            print("\nKulutasite {:,.2f}".format(money_spent) + "€ piletite peale (" + str(int(money_spent/TICKET_PRICE)) + " piletit).")
-            print("Võitsite {:,.2f}".format(PRIZE) + "€!\n")
+            print(f"\nKulutasite {money_spent:,.2f}€ piletite peale ({(int(money_spent/TICKET_PRICE))} piletit).")
+            print(f"Võitsite {(PRIZE):,.2f}€!\n")
+            
+            # Uurime kaua läks. Korra nädalas loositakse. Alustasime loosimise päeval
+            total_days = ((money_spent/TICKET_PRICE)/in_tickets) * 7 - 7
+            years = int(total_days // 365)
+            months = int((total_days % 365) // 30)
+            days = int((total_days % 365) % 30)
+            print("Sul kulus jackpoti võitmiseks " + str(years) + " aastat, " + str(months) + " kuud ja " + str(days) + " päeva.\n")
+            
             money_spent = 0
         # Kaotasime. Proovime uuesti
         else:
             money_spent += TICKET_PRICE*in_tickets
-            #print("Kaotasite {:,.2f}".format(int(TICKET_PRICE*in_tickets)) + "€ (piletihind). Olete kulutanud {:,.2f}".format(money_spent) + "€ piletite peale (" + str(int(money_spent/TICKET_PRICE)) + " piletit).")
+            #print(f"Kaotasite {int(TICKET_PRICE*in_tickets):,.2f} € (piletihind). Olete kulutanud {money_spent:,.2f}€ piletite peale ({int(money_spent/TICKET_PRICE)} piletit).")
 
