@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="et">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Eurojackpot simulaator</title>
+
+    <link href="assets/dist/css/bootstrap-dark.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    <link href="main.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.8.8/brython.js" integrity="sha256-rA89wPrTJJQFWJaZveKW8jpdmC3t5F9rRkPyBjz8G04=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.8.8/brython_stdlib.js" integrity="sha256-Gnrw9tIjrsXcZSCh/wos5Jrpn0bNVNFJuNJI9d71TDs=" crossorigin="anonymous"></script>
+</head>
+
+<body class="text-center" onload="brython()">
+    <main class="form-jackpot">
+        <form>
+            <img class="mb-4" src="assets/eurojackpot.png" alt="" width="200" height="100">
+
+            <div id="calc"></div><br>
+
+            <div class="form-floating">
+                <input type="text" class="form-control" id="text" placeholder="Sisestage täisarv">
+            </div><br>
+
+            <button type="button" class="w-100 btn btn-lg btn-primary" id="calc-btn">Arvuta</button>
+
+            <p class="mt-5 mb-3 text-muted">Hasartmäng pole sobiv viis rahaliste probleemide lahendamiseks.<br><br>18+, panusta vastutustundlikult.</p>
+
+            <span id="output"></span>
+            <script src = "main.py" type="text/python" defer>
+            </script>
+        </form>
+    </main>
+</body>
+
+</html>
